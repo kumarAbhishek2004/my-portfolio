@@ -15,7 +15,7 @@ export const personalInfo = {
     hobbies: "When I'm not coding, you'll find me contributing to technical clubs like AAVESH or diving into literature with EUNOIA."
   },
   stats: [
-    { label: 'CGPA', value: '7.78', icon: '📚', color: 'from-blue-600 to-blue-700' },
+    { label: 'CGPA', value: '7.79', icon: '📚', color: 'from-blue-600 to-blue-700' },
     { label: 'Projects', value: '13+', icon: '💼', color: 'from-purple-600 to-purple-700' },
     { label: 'Skills', value: '20+', icon: '⚡', color: 'from-cyan-600 to-cyan-700' }
   ]
@@ -25,15 +25,15 @@ export const education = [
   {
     degree: 'B.Tech in Electronics and Communication Engineering',
     institution: 'IIIT Una',
-    year: '2021 - Present',
-    grade: 'CGPA: 7.78',
+    year: '2023 - Present',
+    grade: 'CGPA: 7.79',
     icon: '🎓',
     color: 'from-blue-500 to-purple-500'
   },
   {
     degree: 'Class 12 (CBSE)',
     institution: 'Delhi Model Public School',
-    year: '2021',
+    year: '2022',
     grade: 'Marks: 85%',
     icon: '📚',
     color: 'from-purple-500 to-cyan-500'
@@ -41,7 +41,7 @@ export const education = [
   {
     degree: 'Class 10 (CBSE)',
     institution: 'D.A.V. Public School',
-    year: '2019',
+    year: '2020',
     grade: 'Marks: 92.4%',
     icon: '📖',
     color: 'from-cyan-500 to-blue-500'
