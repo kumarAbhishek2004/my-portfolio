@@ -3,123 +3,136 @@ import NeuralNetwork from "../ui/NeuralNetwork";
 import RoleSlider from "../ui/RoleSlider";
 
 const HeroSection = () => {
-  const downloadFile = (file, name) => {
+  const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = file;
-    link.download = name;
+    link.href = "/resume.pdf";
+    link.download = "Kumar_Abhishek_Resume.pdf";
+    link.click();
+  };
+
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/cv.pdf";
+    link.download = "Kumar_Abhishek_CV.pdf";
     link.click();
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050a18] via-[#0b132a] to-[#050a18] pt-20">
-      {/* Neural background animation */}
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       <NeuralNetwork />
 
-      {/* Subtle glow lights */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-
-      {/* Main content */}
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.3 }}
-        className="text-center z-10 px-4 max-w-6xl mx-auto"
+        transition={{ duration: 1.2 }}
+        className="text-center z-10 px-4 max-w-5xl mx-auto"
       >
-        {/* Name with unified gradient */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+        {/* ================== Name & Title ================== */}
+        <motion.div
+          initial={{ scale: 0.7, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tight mb-6"
+          className="mb-6 px-2 sm:px-4"
         >
-          <motion.span
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          <motion.h1
+            className="
+              font-black 
+              text-center 
+              bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 
+              bg-clip-text text-transparent 
+              mb-6 tracking-tight 
+              leading-[1.1] 
+              whitespace-normal 
+              break-words
+            "
+            style={{
+              fontSize: "clamp(2.5rem, 10vw, 6rem)", // Scales smoothly
+              animation: "gradientFlow 6s ease-in-out infinite",
+              backgroundSize: "200% auto",
             }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-[length:200%_200%] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,255,255,0.4)]"
           >
-            KUMAR&nbsp;ABHISHEK
-          </motion.span>
-        </motion.h1>
+            KUMAR <br className="sm:hidden" /> ABHISHEK
+          </motion.h1>
 
-        {/* Animated underline */}
-        <motion.div
-          animate={{ scaleX: [0, 1, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="h-[3px] w-96 mx-auto bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full"
-        />
+          <motion.div
+            animate={{ scaleX: [0, 1, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="h-1 w-56 sm:w-80 mx-auto bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full"
+          />
+        </motion.div>
 
-        {/* Role slider */}
+        {/* ================== Role Slider ================== */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="mt-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mb-6 sm:mb-8"
         >
           <RoleSlider />
         </motion.div>
 
-        {/* Tagline */}
+        {/* ================== Tagline ================== */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-light tracking-wide leading-relaxed"
+          transition={{ delay: 0.9 }}
+          className="text-lg sm:text-2xl text-gray-400 mb-10 sm:mb-12 max-w-3xl mx-auto font-light tracking-wide px-4 leading-relaxed"
         >
           Building intelligent systems with creativity and precision.
         </motion.p>
 
-        {/* Buttons */}
+        {/* ================== Buttons ================== */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.3 }}
-          className="flex flex-wrap gap-6 justify-center"
+          transition={{ delay: 1.1 }}
+          className="flex flex-wrap gap-4 justify-center"
         >
-          {/* Resume */}
           <motion.button
-            whileHover={{ scale: 1.08, boxShadow: "0 0 30px rgba(0,255,255,0.5)" }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() =>
-              downloadFile("/resume.pdf", "Kumar_Abhishek_Resume.pdf")
-            }
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-500"
+            onClick={downloadResume}
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all flex items-center gap-2 text-sm sm:text-base"
           >
-            📄 Download Resume
+            <span>📄</span> Download Resume
           </motion.button>
 
-          {/* CV */}
           <motion.button
-            whileHover={{ scale: 1.08, boxShadow: "0 0 30px rgba(0,140,255,0.5)" }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => downloadFile("/cv.pdf", "Kumar_Abhishek_CV.pdf")}
-            className="px-8 py-4 bg-slate-900/70 border border-cyan-500/30 text-cyan-300 rounded-xl font-semibold backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/70 hover:text-cyan-100"
+            onClick={downloadCV}
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/60 backdrop-blur-xl border border-blue-500/30 text-gray-300 rounded-xl font-semibold hover:bg-slate-800 hover:border-blue-500/50 transition-all flex items-center gap-2 text-sm sm:text-base"
           >
-            📋 Download CV
+            <span>📋</span> Download CV
           </motion.button>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* ================== Scroll Indicator ================== */}
         <motion.div
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-10 sm:bottom-12 left-1/2 transform -translate-x-1/2"
         >
-          <div className="w-8 h-14 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
+          <div className="w-6 sm:w-8 h-10 sm:h-12 border-2 border-blue-400/50 rounded-full flex items-start justify-center p-1.5 sm:p-2">
             <motion.div
-              animate={{ y: [0, 18, 0], opacity: [1, 0.3, 1] }}
+              animate={{ y: [0, 16, 0], opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.8, repeat: Infinity }}
-              className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.7)]"
+              className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-blue-400 rounded-full"
             />
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Gradient Flow Animation */}
+      <style>
+        {`
+          @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </section>
   );
 };

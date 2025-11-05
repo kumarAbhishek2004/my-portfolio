@@ -8,6 +8,14 @@ const ProjectsSection = () => {
 
   const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
+  // Helper: Handle correct demo URL logic
+  const getDemoLink = (demo) => {
+    if (!demo) return null;
+    if (demo.startsWith("/")) return demo; // local /public HTML
+    if (demo.startsWith("http")) return demo; // full URL
+    return `https://${demo}`; // fallback for raw domains
+  };
+
   return (
     <section className="min-h-screen py-20 px-4 relative">
       <motion.div
@@ -16,7 +24,7 @@ const ProjectsSection = () => {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto relative z-10"
       >
-        {/* Section Heading */}
+        {/* ===== Section Header ===== */}
         <h2 className="text-6xl md:text-7xl font-bold text-center mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
           Projects
         </h2>
@@ -24,7 +32,7 @@ const ProjectsSection = () => {
           Explore my work — {projects.length} projects and counting
         </p>
 
-        {/* Project Cards Grid */}
+        {/* ===== Project Grid ===== */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {displayedProjects.map((project, index) => (
             <motion.div
@@ -36,18 +44,18 @@ const ProjectsSection = () => {
               whileHover={{ y: -5 }}
               className="bg-slate-900/70 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-6 shadow-lg hover:shadow-[0_0_30px_rgba(0,255,255,0.25)] transition-all duration-500 flex flex-col justify-between"
             >
-              {/* Title + Icon */}
+              {/* === Title + Icon === */}
               <div className="text-4xl mb-4">{project.icon}</div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">
                 {project.title}
               </h3>
 
-              {/* Description */}
+              {/* === Description === */}
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 {project.description}
               </p>
 
-              {/* Tech Stack */}
+              {/* === Tech Stack === */}
               {project.tech && (
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
@@ -61,16 +69,12 @@ const ProjectsSection = () => {
                 </div>
               )}
 
-              {/* Buttons */}
+              {/* === Buttons === */}
               <div className="flex flex-wrap gap-3 mt-auto">
-                {/* Live Demo / Preview Button */}
-                {project.demo ? (
+                {/* Live Demo / HTML Preview Button */}
+                {project.demo && (
                   <motion.a
-                    href={
-                      project.demo.startsWith("http")
-                        ? project.demo
-                        : `https://${project.demo}`
-                    }
+                    href={getDemoLink(project.demo)}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{
@@ -82,7 +86,10 @@ const ProjectsSection = () => {
                   >
                     🚀 Live Demo
                   </motion.a>
-                ) : project.image ? (
+                )}
+
+                {/* Preview Image Button (for IPL, FNP) */}
+                {!project.demo && project.image && (
                   <motion.button
                     onClick={() => setActiveImage(project.image)}
                     whileHover={{
@@ -94,9 +101,9 @@ const ProjectsSection = () => {
                   >
                     🖼️ Preview
                   </motion.button>
-                ) : null}
+                )}
 
-                {/* GitHub Button */}
+                {/* GitHub Code Button */}
                 {project.github && (
                   <motion.a
                     href={project.github}
@@ -117,7 +124,7 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Show More / Show Less */}
+        {/* ===== Show More / Less Button ===== */}
         {projects.length > 6 && (
           <div className="flex justify-center">
             <motion.button
@@ -132,7 +139,7 @@ const ProjectsSection = () => {
         )}
       </motion.div>
 
-      {/* Image Popup Modal */}
+      {/* ===== Image Modal for Previews ===== */}
       <AnimatePresence>
         {activeImage && (
           <motion.div

@@ -90,7 +90,6 @@ const AboutSection = () => {
               {[
                 ["📧", "abhishek.kr0418@gmail.com"],
                 ["📱", "+91 9608013812"],
-                ["📍", "Una, India"],
                 ["🎓", "B.Tech (ECE) - IIIT Una"],
                 ["💼", "Available for Freelance"],
               ].map(([icon, text], i) => (

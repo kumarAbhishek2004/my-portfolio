@@ -3,7 +3,7 @@ export const personalInfo = {
   email: 'abhishek.kr0418@gmail.com',
   phone: '+91 9608013812',
   location: 'Una, India',
-  age: '18 Years',
+  age: '21 Years',
   degree: 'B.Tech (ECE) - IIIT Una',
   status: 'Available for Freelance',
   github: 'https://github.com/kumarAbhishek2004',

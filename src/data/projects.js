@@ -75,7 +75,7 @@ export const projects = [
       { icon: '📧', label: 'Email Integration' },
     ],
     github: 'https://github.com/kumarAbhishek2004/Ai_Newletter',
-    demo: '/AI_Research_Paper_2025.html', // 
+    demo: '/AI_Research_Paper_2025.html',  
   },
   {
     icon: '🤖',

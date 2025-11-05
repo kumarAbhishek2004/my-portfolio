@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/AI_Research_Paper_2025.html", "destination": "/AI_Research_Paper_2025.html" }
+  "routes": [
+    {
+      "src": "/AI_Research_Paper_2025.html",
+      "dest": "/AI_Research_Paper_2025.html",
+      "headers": { "Cache-Control": "public, max-age=0, must-revalidate" }
+    }
   ]
 }
