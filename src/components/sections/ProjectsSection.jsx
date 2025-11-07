@@ -84,7 +84,7 @@ const ProjectsSection = () => {
                     whileTap={{ scale: 0.95 }}
                     className="flex-1 text-center px-5 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold shadow-md hover:shadow-cyan-500/40 transition-all"
                   >
-                    🚀 Live Demo
+                     Live Demo
                   </motion.a>
                 )}
 
@@ -99,7 +99,7 @@ const ProjectsSection = () => {
                     whileTap={{ scale: 0.95 }}
                     className="flex-1 text-center px-5 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold shadow-md hover:shadow-cyan-500/40 transition-all"
                   >
-                    🖼️ Preview
+                     Preview
                   </motion.button>
                 )}
 
@@ -116,7 +116,7 @@ const ProjectsSection = () => {
                     whileTap={{ scale: 0.95 }}
                     className="flex-1 text-center px-5 py-3 bg-slate-800/70 border border-cyan-500/30 text-cyan-300 rounded-xl font-semibold hover:border-cyan-400/70 hover:text-cyan-100 transition-all"
                   >
-                    💻 View Code
+                     View Code
                   </motion.a>
                 )}
               </div>

@@ -226,7 +226,7 @@ const ContactSection = () => {
                   ? "✓ Message Sent!"
                   : status === "error"
                   ? "⚠️ Error! Try Again"
-                  : "Send Message 🚀"}
+                  : "Send Message "}
               </motion.button>
             </div>
           </motion.form>
