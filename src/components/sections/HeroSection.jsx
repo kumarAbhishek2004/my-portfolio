@@ -86,7 +86,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1 }}
-          className="flex flex-wrap gap-4 justify-center"
+          className="flex flex-wrap gap-6 sm:gap-8 justify-center mb-24 sm:mb-32"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}

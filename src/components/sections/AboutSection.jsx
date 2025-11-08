@@ -122,20 +122,24 @@ const AboutSection = () => {
               student at{" "}
               <span className="text-cyan-400">IIIT Una</span>, passionate about{" "}
               <span className="text-blue-400">Machine Learning</span>,{" "}
-              <span className="text-cyan-400">Data Science</span>, and{" "}
-              <span className="text-blue-400">Deep Learning</span>.
+              <span className="text-cyan-400">Deep Learning</span>, and{" "}
+              <span className="text-purple-400">Generative AI</span>.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              I specialize in building intelligent, data-driven solutions and
-              deploying end-to-end ML models. My interest lies in{" "}
-              <span className="text-blue-400">AI-driven healthcare</span>,
-              exploring ECG signal analysis and medical recommendation systems.
+              I specialize in building intelligent, data-driven solutions using{" "}
+              <span className="text-blue-400">LangChain</span>,{" "}
+              <span className="text-cyan-400">LangGraph</span>, and{" "}
+              <span className="text-purple-400">MCP frameworks</span>. From{" "}
+              <span className="text-blue-400">RAG-powered chatbots</span> and{" "}
+              <span className="text-cyan-400">AI newsletter automation</span> to{" "}
+              <span className="text-purple-400">interactive dashboards</span> with{" "}
+              <span className="text-blue-400">Excel</span> and{" "}
+              <span className="text-cyan-400">Power BI</span>—I transform data into actionable insights.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              When I'm not coding, I contribute to{" "}
-              <span className="text-blue-400">AAVESH</span> (technical club) and
-              explore literature through{" "}
-              <span className="text-cyan-400">EUNOIA</span>.
+              Beyond academics, I actively contribute to{" "}
+              <span className="text-blue-400 font-semibold">AAVESH</span>, our technical club, while nurturing my creative side through{" "}
+              <span className="text-cyan-400 font-semibold">EUNOIA</span>, the literature club.
             </p>
 
             {/* Contact Info */}
@@ -144,7 +148,7 @@ const AboutSection = () => {
                 ["📧", "abhishek.kr0418@gmail.com"],
                 ["📱", "+91 9608013812"],
                 ["🎓", "B.Tech (ECE) - IIIT Una"],
-                ["💼", "Available for Freelance"],
+                ["💼", "Open to Opportunities"],
               ].map(([icon, text], i) => (
                 <motion.div
                   key={i}
@@ -184,7 +188,7 @@ const AboutSection = () => {
                 },
                 {
                   label: "Projects",
-                  value: "13+",
+                  value: "11+",
                   icon: "💼",
                   color: "from-purple-600 to-purple-700",
                 },
@@ -203,7 +207,7 @@ const AboutSection = () => {
                   }}
                   whileHover={{ y: -6, scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250, damping: 12 }}
-                  className={`bg-gradient-to-br ${stat.color} rounded-2xl p-6 text-center shadow-lg text-white`}
+                  className={`bg-gradient-to-br ${stat.color} rounded-2xl p-6 text-center shadow-lg text-white relative z-10`}
                 >
                   <div className="text-3xl mb-2">{stat.icon}</div>
                   <div className="text-4xl font-extrabold">{stat.value}</div>
